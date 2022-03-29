@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "labels": [ "renovate" ],
+  "timezone": "Europe/Berlin",
+  "schedule": [ "after 9am and before 5pm on Mon to Fri" ],
+  "updateNotScheduled": true,
+  "dependencyDashboard": false,
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 1,
+  "prCreation": "not-pending",
+  "recreateClosed": false,
+  "rebaseWhen": "behind-base-branch",
+  "separateMajorMinor": false,
+  "semanticCommits": "disabled",
+  "stabilityDays": 0,
+  "rangeStrategy": "replace",
+  "enabledManagers": [ "sbt" ],
+  "packageRules": [
+    {
+      "groupName": [ "all versions" ],
+      "matchUpdateTypes": [ "major", "minor", "patch", "pin", "digest" ],
+      "automerge": true
+    },
+    {
+      "matchManagers": [ "sbt" ],
+      "matchPackagePrefixes": [ "io.confluent" ],
+      "registryUrls": [ "https://packages.confluent.io/maven/" ]
+    }
+  ]
+}
+
